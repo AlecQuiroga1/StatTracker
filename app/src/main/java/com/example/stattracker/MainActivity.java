@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     public static int addition(ArrayList<Integer> list){
-        int totalScore = 0;
+        int totalscore = 0;
         for(int i = 0; i < list.size(); i++){
-            totalScore = totalScore + list.get(i);
+            totalscore = totalscore + list.get(i);
         }
-        return totalScore;
+        return totalscore;
     }
 }
