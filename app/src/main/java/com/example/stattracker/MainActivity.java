@@ -1,4 +1,10 @@
 package com.example.stattracker;
+/**
+ * Alec Quiroga
+ * 4/29/20
+ * Advanced Java
+ *
+ */
 
 import androidx.appcompat.app.AppCompatActivity;
 

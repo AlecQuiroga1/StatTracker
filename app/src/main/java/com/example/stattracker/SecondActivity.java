@@ -1,5 +1,11 @@
 package com.example.stattracker;
 
+/**
+ * Alec Quiroga
+ * 4/29/20
+ * Advanced Java
+ *
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -38,7 +44,7 @@ public class SecondActivity extends AppCompatActivity {
         nineHolePrompts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                totalNumOfHoles = 3;
+                totalNumOfHoles = 9;
                 Intent startIntent = new Intent(getApplicationContext(), HolePrompts.class);
                 startActivity(startIntent);
 

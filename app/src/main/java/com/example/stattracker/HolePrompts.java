@@ -1,5 +1,10 @@
 package com.example.stattracker;
-
+/**
+ * Alec Quiroga
+ * 4/29/20
+ * Advanced Java
+ *
+ */
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -18,6 +23,8 @@ public class HolePrompts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
+        // Starts the activity over and over until the total number of holes has been filled in.
         if (SecondActivity.allScores.size() < SecondActivity.totalNumOfHoles){
             setContentView(R.layout.activity_holeprompts);
 
@@ -35,11 +42,14 @@ public class HolePrompts extends AppCompatActivity {
                     // Getting input for the Par of the Hole.
                     EditText parEditText = (EditText) findViewById(R.id.par);
 
-                    // Getting input for the score made on hole.
-                    EditText scoreEditText = (EditText) findViewById(R.id.score);
 
-                    CheckBox green = (CheckBox) findViewById(R.id.greenInReg);
-                    CheckBox upDown = (CheckBox) findViewById(R.id.upAndDown);
+                    // Getting input for the score made on hole.
+                        EditText scoreEditText = (EditText) findViewById(R.id.score);
+
+                        CheckBox green = (CheckBox) findViewById(R.id.greenInReg);
+                        CheckBox upDown = (CheckBox) findViewById(R.id.upAndDown);
+
+
 
                     if(green.isChecked()){
                         SecondActivity.greenCount += 1;
@@ -58,8 +68,10 @@ public class HolePrompts extends AppCompatActivity {
                     SecondActivity.allScores.add(currentScore);
                     SecondActivity.toPar.add(currentToPar);
 
+                    // Starts the same activity over
                     Intent Intent = getIntent();
                     startActivity(Intent);
+
                 }
             });
 
