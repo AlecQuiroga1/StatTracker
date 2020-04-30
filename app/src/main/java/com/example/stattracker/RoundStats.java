@@ -22,24 +22,24 @@ public class RoundStats extends AppCompatActivity {
         setContentView(R.layout.activity_round_stats);
 
         // Displaying total Score of the round.
-        final int yourScore = MainActivity.addition(SecondActivity.allScores);
+        final int yourScore = MainActivity.addition(HoleChoice.allScores);
         String scores = "Your Score: "+ yourScore;
         TextView scoreDisplay = (TextView) findViewById(R.id.totalScore);
         scoreDisplay.setText(scores);
 
         // Displaying the total par input.
-        final int totalPar = MainActivity.addition(SecondActivity.parOfHoles);
+        final int totalPar = MainActivity.addition(HoleChoice.parOfHoles);
         String stringOfPar = "Par: "+ totalPar;
         TextView parDisplay = (TextView) findViewById(R.id.parTotal);
         parDisplay.setText(stringOfPar);
 
-        final String totalGreens = "Greens In Regulation: " + SecondActivity.greenCount +
-                "/"+ SecondActivity.totalNumOfHoles;
+        final String totalGreens = "Greens In Regulation: " + HoleChoice.greenCount +
+                "/"+ HoleChoice.totalNumOfHoles;
         TextView greenDisplay = (TextView) findViewById(R.id.greenInRegDisplay);
         greenDisplay.setText(totalGreens);
 
-        String totalUpNDown = "Up and Downs: " + SecondActivity.upNDown +
-                "/"+ (SecondActivity.totalNumOfHoles - SecondActivity.greenCount);
+        String totalUpNDown = "Up and Downs: " + HoleChoice.upNDown +
+                "/"+ (HoleChoice.totalNumOfHoles - HoleChoice.greenCount);
         TextView upAndDownDisplay = (TextView) findViewById(R.id.upAndDown);
         upAndDownDisplay.setText(totalUpNDown);
 
@@ -51,9 +51,9 @@ public class RoundStats extends AppCompatActivity {
 
                 // Makes it so that rounds Statistics are only saved
                 // it is a full eighteen holes
-                if(SecondActivity.totalNumOfHoles == 18) {
-                    String allOfStats = totalPar + "," + yourScore + "," +SecondActivity.greenCount +
-                            "," + SecondActivity.upNDown;
+                if(HoleChoice.totalNumOfHoles == 18) {
+                    String allOfStats = totalPar + "," + yourScore + "," + HoleChoice.greenCount +
+                            "," + HoleChoice.upNDown;
                 }
                 Intent Intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(Intent);

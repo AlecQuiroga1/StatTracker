@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         addRound.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent startIntent = new Intent(getApplicationContext(), SecondActivity.class);
+                Intent startIntent = new Intent(getApplicationContext(), HoleChoice.class);
                 startActivity(startIntent);
             }
         });
@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void load(){
+
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         String inputText = sharedPreferences.getString("text", "");
 

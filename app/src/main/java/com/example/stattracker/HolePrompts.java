@@ -15,8 +15,6 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-
 public class HolePrompts extends AppCompatActivity {
 
     @Override
@@ -25,10 +23,10 @@ public class HolePrompts extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Starts the activity over and over until the total number of holes has been filled in.
-        if (SecondActivity.allScores.size() < SecondActivity.totalNumOfHoles){
+        if (HoleChoice.allScores.size() < HoleChoice.totalNumOfHoles){
             setContentView(R.layout.activity_holeprompts);
 
-            String holeNumber = "Hole: "+ (SecondActivity.allScores.size() +1);
+            String holeNumber = "Hole: "+ (HoleChoice.allScores.size() +1);
 
             TextView tv = (TextView) findViewById(R.id.holeNum);
             tv.setText(holeNumber);
@@ -53,10 +51,10 @@ public class HolePrompts extends AppCompatActivity {
                     // Makes it so that if green in regulation is checked
                     // then up and down cannot count
                     if(green.isChecked()){
-                        SecondActivity.greenCount += 1;
+                        HoleChoice.greenCount += 1;
 
                     }else if(upDown.isChecked()){
-                        SecondActivity.upNDown += 1;
+                        HoleChoice.upNDown += 1;
                     }
 
                     int currentScore = Integer.parseInt(scoreEditText.getText().toString());
@@ -65,9 +63,9 @@ public class HolePrompts extends AppCompatActivity {
 
                     int currentToPar = currentScore - currentPar;
 
-                    SecondActivity.parOfHoles.add(currentPar);
-                    SecondActivity.allScores.add(currentScore);
-                    SecondActivity.toPar.add(currentToPar);
+                    HoleChoice.parOfHoles.add(currentPar);
+                    HoleChoice.allScores.add(currentScore);
+                    HoleChoice.toPar.add(currentToPar);
 
                     // Starts the same activity over
                     Intent Intent = getIntent();
@@ -77,12 +75,10 @@ public class HolePrompts extends AppCompatActivity {
             });
 
         } else{
+            // Opens the Round stats Activity
             Intent startCheckerIntent = new Intent(getApplicationContext(), RoundStats.class);
             startActivity(startCheckerIntent);
         }
-
-
-
 
     }
 

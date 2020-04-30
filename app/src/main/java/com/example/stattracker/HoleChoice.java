@@ -4,7 +4,7 @@ package com.example.stattracker;
  * Alec Quiroga
  * 4/29/20
  * Advanced Java
- * Controls the two buttons that chose whether you want to play 18 or 9 holes
+ * Controls the two buttons that chose whether you want to play 18 or 9 holes.
  */
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,11 +15,13 @@ import android.widget.Button;
 
 import java.util.ArrayList;
 
-public class SecondActivity extends AppCompatActivity {
+public class HoleChoice extends AppCompatActivity {
 
     public static ArrayList<Integer> parOfHoles = new ArrayList<Integer>();
     public static ArrayList <Integer> allScores = new ArrayList<Integer>();
     public static ArrayList <Integer> toPar = new ArrayList<Integer>();
+
+
     public static int totalNumOfHoles;
     public static int upNDown = 0;
     public static int greenCount = 0;
