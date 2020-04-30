@@ -4,6 +4,7 @@ package com.example.stattracker;
  * 4/29/20
  * Advanced Java
  *
+ * Prompts the user for the different inputs needed to keep track of the stats.
  */
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,10 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
+/**
+ * This class contains the prompts from which the inputs used for the Stats are gained.
+ * Keeps on activating itself until the max number of holes are filled.
+ */
 public class HolePrompts extends AppCompatActivity {
 
     @Override
@@ -26,11 +31,14 @@ public class HolePrompts extends AppCompatActivity {
         if (HoleChoice.allScores.size() < HoleChoice.totalNumOfHoles){
             setContentView(R.layout.activity_holeprompts);
 
+            // String that will be used to display the hole number.
             String holeNumber = "Hole: "+ (HoleChoice.allScores.size() +1);
 
+            //Displays the Hole number
             TextView tv = (TextView) findViewById(R.id.holeNum);
             tv.setText(holeNumber);
 
+            // Button to clear and save the stored values.
             Button nextHole = (Button) findViewById(R.id.nextHole);
 
             nextHole.setOnClickListener(new View.OnClickListener() {
@@ -57,12 +65,14 @@ public class HolePrompts extends AppCompatActivity {
                         HoleChoice.upNDown += 1;
                     }
 
+                    // Converting the inputs to integers
                     int currentScore = Integer.parseInt(scoreEditText.getText().toString());
                     int currentPar = Integer.parseInt(parEditText.getText().toString());
 
 
                     int currentToPar = currentScore - currentPar;
 
+                    // Stores the input values to arrayLists
                     HoleChoice.parOfHoles.add(currentPar);
                     HoleChoice.allScores.add(currentScore);
                     HoleChoice.toPar.add(currentToPar);

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class HoleChoice extends AppCompatActivity {
 
+    // Arraylists to store the values needed
     public static ArrayList<Integer> parOfHoles = new ArrayList<Integer>();
     public static ArrayList <Integer> allScores = new ArrayList<Integer>();
     public static ArrayList <Integer> toPar = new ArrayList<Integer>();
@@ -32,21 +33,32 @@ public class HoleChoice extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
+        // Button that sets the values if the person it going to play eighteen holes.
         Button eighteenHolePrompts = (Button) findViewById(R.id.eighteenHoles);
         eighteenHolePrompts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Sets the total of holes.
                 totalNumOfHoles = 18;
+
+                // Moves to the hole prompts activity.
                 Intent startIntent = new Intent(getApplicationContext(), HolePrompts.class);
                 startActivity(startIntent);
 
             }
         });
+
+        // Button for if the user wants to play nine holes.
         Button nineHolePrompts = (Button) findViewById(R.id.nineHoles);
         nineHolePrompts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //Sets the total of holes.
                 totalNumOfHoles = 9;
+
+                // Move the app to the whole prompts activity.
                 Intent startIntent = new Intent(getApplicationContext(), HolePrompts.class);
                 startActivity(startIntent);
 

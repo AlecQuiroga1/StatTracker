@@ -45,9 +45,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * It takes in a arraylist of integers
+     * It takes in a arraylist of integers and adds up the entire thing.
+     * Then returns the total.
      *
-     * @param list
+     * @param list an ArrayList of integers that
      * @return The total of the integer array list.
      */
     public static int addition(ArrayList<Integer> list){
@@ -58,14 +59,19 @@ public class MainActivity extends AppCompatActivity {
         return totalscore;
     }
 
+    /**
+     * Loads in the string from SharedPreferences then tokenizes it to add to the arraylist.
+     */
     public void load(){
-
+        // Makes an instance of shared preferences to save the string values.
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         String inputText = sharedPreferences.getString("text", "");
 
+        // As long as the input text is not the default value it will execute.
         if(!inputText.equals("")){
            String[] array = inputText.split(" ");
 
+           //Adds the tokens to the arraylist.
            for(int i = 0; i < array.length; i++){
                allStats.add(array[i]);
            }

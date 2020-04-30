@@ -26,6 +26,7 @@ public class StatsChecker extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats_checker);
 
+        // Calculates all of the averages
         averages();
         String scores = "Average Score: " + averageScore;
         TextView scoreDisplay = (TextView) findViewById(R.id.scoreAverage);
@@ -36,15 +37,18 @@ public class StatsChecker extends AppCompatActivity {
         TextView parDisplay = (TextView) findViewById(R.id.averageParText);
         parDisplay.setText(stringOfPar);
 
+        // Displays the average greens hit in regulation.
         String totalGreens = "Average Greens In Regulation: " + averageGreen;
         TextView greenDisplay = (TextView) findViewById(R.id.greensPercent);
         greenDisplay.setText(totalGreens);
 
+
+        // Displays the up and down percentage.
         String totalUpNDown = "Up and Down Percent: " + averageUpPercent;
         TextView upAndDownDisplay = (TextView) findViewById(R.id.percentUpAndDown);
         upAndDownDisplay.setText(totalUpNDown);
 
-
+        // Back button that moves you back to the Main Activity
         Button back = (Button) findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
