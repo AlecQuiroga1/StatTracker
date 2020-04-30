@@ -4,6 +4,7 @@ package com.example.stattracker;
  * 4/29/20
  * Advanced Java
  *
+ * Main Activity is the start of the app and everything will come back to this activity.
  */
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,8 @@ import android.widget.Button;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+
+    // Stores the strings that are loaded in.
     public static ArrayList<String> allStats = new ArrayList<String>();
 
     @Override
@@ -24,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Button moves to a new activity that allows the user to add a new round.
         Button addRound = (Button) findViewById(R.id.addRoundButton);
         addRound.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,10 +37,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Button takes the user to the stat checker int
         Button checkStatsButton = (Button) findViewById(R.id.statChecker);
         checkStatsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Loads in the previous rounds data.
                 load();
                 Intent startCheckerIntent = new Intent(getApplicationContext(), StatsChecker.class);
                 startActivity(startCheckerIntent);

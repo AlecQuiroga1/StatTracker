@@ -4,6 +4,8 @@ package com.example.stattracker;
  * 4/29/20
  * Advanced Java
  *
+ * Displays all of the numbers input by the user.
+ * The Score, Par, Greens in regulation, and the amount of up and downs.
  */
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -33,11 +35,15 @@ public class RoundStats extends AppCompatActivity {
         TextView parDisplay = (TextView) findViewById(R.id.parTotal);
         parDisplay.setText(stringOfPar);
 
+
+        // Displays the amount of greens in regulation.
         final String totalGreens = "Greens In Regulation: " + HoleChoice.greenCount +
                 "/"+ HoleChoice.totalNumOfHoles;
         TextView greenDisplay = (TextView) findViewById(R.id.greenInRegDisplay);
         greenDisplay.setText(totalGreens);
 
+
+        // Displaying the total up and downs.
         String totalUpNDown = "Up and Downs: " + HoleChoice.upNDown +
                 "/"+ (HoleChoice.totalNumOfHoles - HoleChoice.greenCount);
         TextView upAndDownDisplay = (TextView) findViewById(R.id.upAndDown);
@@ -73,9 +79,12 @@ public class RoundStats extends AppCompatActivity {
             MainActivity.allStats.remove(4);
         }
 
+        // Makes all of the strings into a single string.
         for (int i = 0; i < MainActivity.allStats.size(); i++ ){
             allOfStats = allOfStats + " " + MainActivity.allStats.get(i);
         }
+
+        // Saves the single string
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putString("text", allOfStats);

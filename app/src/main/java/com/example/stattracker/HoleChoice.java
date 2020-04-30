@@ -17,12 +17,16 @@ import java.util.ArrayList;
 
 public class HoleChoice extends AppCompatActivity {
 
-    // Arraylists to store the values needed
+    // Arraylists to store the values needed for hole pars.
     public static ArrayList<Integer> parOfHoles = new ArrayList<Integer>();
+
+    // Arraylist that stores inputted scores.
     public static ArrayList <Integer> allScores = new ArrayList<Integer>();
+
+    // Subtracts the two other arraylist to get the difference between the score and par.
     public static ArrayList <Integer> toPar = new ArrayList<Integer>();
 
-
+    // Initializing global variable
     public static int totalNumOfHoles;
     public static int upNDown = 0;
     public static int greenCount = 0;

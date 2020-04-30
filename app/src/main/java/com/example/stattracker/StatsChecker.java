@@ -4,6 +4,7 @@ package com.example.stattracker;
  * 4/29/20
  * Advanced Java
  *
+ * Calculates the stat averages through the rounds to display the averages over time.
  */
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,6 +16,7 @@ import android.widget.TextView;
 
 public class StatsChecker extends AppCompatActivity {
 
+    // Initializing global variables to be displayed
     public double eighteenHoles = 18.0;
     public double averageScore;
     public double averagePar;
