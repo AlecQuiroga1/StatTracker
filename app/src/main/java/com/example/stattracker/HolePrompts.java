@@ -50,7 +50,8 @@ public class HolePrompts extends AppCompatActivity {
                         CheckBox upDown = (CheckBox) findViewById(R.id.upAndDown);
 
 
-
+                    // Makes it so that if green in regulation is checked
+                    // then up and down cannot count
                     if(green.isChecked()){
                         SecondActivity.greenCount += 1;
 

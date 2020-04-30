@@ -4,7 +4,7 @@ package com.example.stattracker;
  * Alec Quiroga
  * 4/29/20
  * Advanced Java
- *
+ * Controls the two buttons that chose whether you want to play 18 or 9 holes
  */
 import androidx.appcompat.app.AppCompatActivity;
 
