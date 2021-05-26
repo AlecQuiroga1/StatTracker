@@ -24,4 +24,4 @@ On Android Studio (Was Designed for Pixel 3)
 On Your Android Phone
 1. Download the apk to your device through the Build folder on this repo.
 2. To allow third party apk's go to settings.
-3. Security and hit allow unkown sources.
+3. Security and hit allow unknown sources.
